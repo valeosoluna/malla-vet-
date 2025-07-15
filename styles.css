@@ -1,47 +1,42 @@
 body {
   font-family: Arial, sans-serif;
+  background: #f2f2f2;
   padding: 20px;
-  background: #f9f9f9;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .semestre {
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-  background-color: white;
+  margin-bottom: 40px;
 }
 
-.semestre h2 {
-  margin-bottom: 10px;
+.ramos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-button.ramo {
-  display: inline-block;
-  margin: 6px;
-  padding: 10px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 8px;
+.ramo {
+  padding: 10px 15px;
+  background-color: #ffc0cb; /* rosado */
+  border-radius: 6px;
   cursor: pointer;
-  min-width: 250px;
-  text-align: center;
-  transition: 0.3s;
+  user-select: none;
+  border: 1px solid #999;
 }
 
-button.aprobado {
-  background-color: red;
+.ramo.aprobado {
+  background-color: #a64ca6; /* morado */
+  color: white;
   text-decoration: line-through;
 }
 
-button.bloqueado {
-  background-color: gray;
+.ramo.bloqueado {
+  background-color: #ccc;
+  color: #666;
   cursor: not-allowed;
-  opacity: 0.6;
+  pointer-events: none;
 }
-
