@@ -1,42 +1,50 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  padding: 20px;
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const ramos = document.querySelectorAll('.ramo');
 
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-}
+  // Cargar ramos aprobados desde localStorage
+  let aprobados = JSON.parse(localStorage.getItem('aprobados')) || [];
 
-.semestre {
-  margin-bottom: 40px;
-}
+  function marcarAprobados() {
+    ramos.forEach(ramo => {
+      const id = ramo.dataset.id;
+      if (aprobados.includes(id)) {
+        ramo.classList.add('aprobado');
+      }
+    });
+  }
 
-.ramos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  function bloquearPorPrerrequisitos() {
+    ramos.forEach(ramo => {
+      const prerq = ramo.dataset.prerq.split(',').filter(p => p);
+      const id = ramo.dataset.id;
+      const cumple = prerq.every(p => aprobados.includes(p));
+      if (!cumple && prerq.length > 0) {
+        ramo.classList.add('bloqueado');
+      }
+    });
+  }
 
-.ramo {
-  padding: 10px 15px;
-  background-color: #ffc0cb; /* rosado */
-  border-radius: 6px;
-  cursor: pointer;
-  user-select: none;
-  border: 1px solid #999;
-}
+  function actualizarEstado() {
+    localStorage.setItem('aprobados', JSON.stringify(aprobados));
+    ramos.forEach(ramo => ramo.classList.remove('aprobado', 'bloqueado'));
+    marcarAprobados();
+    bloquearPorPrerrequisitos();
+  }
 
-.ramo.aprobado {
-  background-color: #a64ca6; /* morado */
-  color: white;
-  text-decoration: line-through;
-}
+  ramos.forEach(ramo => {
+    ramo.addEventListener('click', () => {
+      const id = ramo.dataset.id;
+      if (ramo.classList.contains('bloqueado')) return;
 
-.ramo.bloqueado {
-  background-color: #ccc;
-  color: #666;
-  cursor: not-allowed;
-  pointer-events: none;
-}
+      if (aprobados.includes(id)) {
+        aprobados = aprobados.filter(x => x !== id);
+      } else {
+        aprobados.push(id);
+      }
+
+      actualizarEstado();
+    });
+  });
+
+  actualizarEstado();
+});
