@@ -1,44 +1,42 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const ramos = document.querySelectorAll(".ramo");
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 20px;
+}
 
-  const estado = {};
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-  ramos.forEach(ramo => {
-    const id = ramo.dataset.id;
-    const prereqs = ramo.dataset.prerrequisitos.split(",").filter(Boolean);
+.semestre {
+  margin-bottom: 40px;
+}
 
-    estado[id] = {
-      aprobado: false,
-      prerequisitos: prereqs,
-    };
+.ramos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-    ramo.addEventListener("click", () => {
-      if (ramo.classList.contains("bloqueado")) return;
+.ramo {
+  padding: 10px 15px;
+  background-color: #ffc0cb; /* rosado */
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #999;
+}
 
-      estado[id].aprobado = !estado[id].aprobado;
-      actualizarMalla();
-    });
-  });
+.ramo.aprobado {
+  background-color: #a64ca6; /* morado */
+  color: white;
+  text-decoration: line-through;
+}
 
-  function actualizarMalla() {
-    ramos.forEach(ramo => {
-      const id = ramo.dataset.id;
-      const data = estado[id];
-      const cumple = data.prerrequisitos.every(pr => estado[pr]?.aprobado);
-
-      ramo.classList.remove("aprobado", "bloqueado");
-
-      if (!cumple && data.prerrequisitos.length > 0) {
-        ramo.classList.add("bloqueado");
-        ramo.disabled = true;
-      } else {
-        ramo.disabled = false;
-        if (data.aprobado) {
-          ramo.classList.add("aprobado");
-        }
-      }
-    });
-  }
-
-  actualizarMalla();
-});
+.ramo.bloqueado {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  pointer-events: none;
+}
