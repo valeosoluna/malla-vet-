@@ -1,47 +1,44 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #f9f9f9;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const ramos = document.querySelectorAll(".ramo");
 
-h1 {
-  text-align: center;
-}
+  const estado = {};
 
-.semestre {
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-  background-color: white;
-}
+  ramos.forEach(ramo => {
+    const id = ramo.dataset.id;
+    const prereqs = ramo.dataset.prerrequisitos.split(",").filter(Boolean);
 
-.semestre h2 {
-  margin-bottom: 10px;
-}
+    estado[id] = {
+      aprobado: false,
+      prerequisitos: prereqs,
+    };
 
-button.ramo {
-  display: inline-block;
-  margin: 6px;
-  padding: 10px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  min-width: 250px;
-  text-align: center;
-  transition: 0.3s;
-}
+    ramo.addEventListener("click", () => {
+      if (ramo.classList.contains("bloqueado")) return;
 
-button.aprobado {
-  background-color: red;
-  text-decoration: line-through;
-}
+      estado[id].aprobado = !estado[id].aprobado;
+      actualizarMalla();
+    });
+  });
 
-button.bloqueado {
-  background-color: gray;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
+  function actualizarMalla() {
+    ramos.forEach(ramo => {
+      const id = ramo.dataset.id;
+      const data = estado[id];
+      const cumple = data.prerrequisitos.every(pr => estado[pr]?.aprobado);
 
+      ramo.classList.remove("aprobado", "bloqueado");
+
+      if (!cumple && data.prerrequisitos.length > 0) {
+        ramo.classList.add("bloqueado");
+        ramo.disabled = true;
+      } else {
+        ramo.disabled = false;
+        if (data.aprobado) {
+          ramo.classList.add("aprobado");
+        }
+      }
+    });
+  }
+
+  actualizarMalla();
+});
