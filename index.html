@@ -1,112 +1,129 @@
-<!-- SEMESTRE I -->
-<div class="semestre">
-  <h2>Semestre I</h2>
-  <button class="ramo" data-id="1" data-prerrequisitos="">Introducción a las Ciencias Veterinarias</button>
-  <button class="ramo" data-id="2" data-prerrequisitos="">Fundamentos de la Química</button>
-  <button class="ramo" data-id="3" data-prerrequisitos="">Biología Celular y Molecular</button>
-  <button class="ramo" data-id="4" data-prerrequisitos="">Matemática</button>
-  <button class="ramo" data-id="5" data-prerrequisitos="">Zoología</button>
-  <button class="ramo" data-id="6" data-prerrequisitos="">Fundamentos de la Física</button>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Interactiva Veterinaria</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Malla Curricular Interactiva</h1>
+  <div id="malla">
+    
+    <!-- Semestre I -->
+    <div class="semestre">
+      <h2>Semestre I</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="1" data-prerq="">Introducción a las Ciencias Veterinarias</div>
+        <div class="ramo" data-id="2" data-prerq="">Fundamentos de la Química</div>
+        <div class="ramo" data-id="3" data-prerq="">Biología Celular y Molecular</div>
+        <div class="ramo" data-id="4" data-prerq="">Matemática</div>
+        <div class="ramo" data-id="5" data-prerq="">Zoología</div>
+        <div class="ramo" data-id="6" data-prerq="">Fundamentos de la Física</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE II -->
-<div class="semestre">
-  <h2>Semestre II</h2>
-  <button class="ramo" data-id="7" data-prerrequisitos="5">Anatomía Animal I</button>
-  <button class="ramo" data-id="8" data-prerrequisitos="3">Praderas y Especies Forrajeras</button>
-  <button class="ramo" data-id="9" data-prerrequisitos="2">Fundamentos de Bioquímica</button>
-  <button class="ramo" data-id="10" data-prerrequisitos="3">Histoembriología Veterinaria</button>
-  <button class="ramo" data-id="11" data-prerrequisitos="4,5">Ecología</button>
-  <button class="ramo" data-id="12" data-prerrequisitos="">Electivo 1</button>
-</div>
+    <!-- Semestre II -->
+    <div class="semestre">
+      <h2>Semestre II</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="7" data-prerq="5">Anatomía Animal I</div>
+        <div class="ramo" data-id="8" data-prerq="2">Praderas y Especies Forrajeras</div>
+        <div class="ramo" data-id="10" data-prerq="3">Histoembriología Veterinaria</div>
+        <div class="ramo" data-id="11" data-prerq="4,5">Ecología</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE III -->
-<div class="semestre">
-  <h2>Semestre III</h2>
-  <button class="ramo" data-id="13" data-prerrequisitos="7">Anatomía Animal II</button>
-  <button class="ramo" data-id="14" data-prerrequisitos="8,9">Nutrición y Alimentación Animal</button>
-  <button class="ramo" data-id="15" data-prerrequisitos="9,10">Fisiología Veterinaria</button>
-  <button class="ramo" data-id="16" data-prerrequisitos="7,11">Práctica Inicial</button>
-  <button class="ramo" data-id="17" data-prerrequisitos="3,9">Inmunología General</button>
-  <button class="ramo" data-id="18" data-prerrequisitos="4">Bioestadística</button>
-  <button class="ramo" data-id="19" data-prerrequisitos="">Electivo 2</button>
-</div>
+    <!-- Semestre III -->
+    <div class="semestre">
+      <h2>Semestre III</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="13" data-prerq="7">Anatomía Animal II</div>
+        <div class="ramo" data-id="14" data-prerq="8">Nutrición y Alimentación Animal</div>
+        <div class="ramo" data-id="15" data-prerq="9,10">Fisiología Veterinaria</div>
+        <div class="ramo" data-id="16" data-prerq="7,11">Práctica Inicial</div>
+        <div class="ramo" data-id="17" data-prerq="3,9">Inmunología General</div>
+        <div class="ramo" data-id="18" data-prerq="4">Bioestadística</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE IV -->
-<div class="semestre">
-  <h2>Semestre IV</h2>
-  <button class="ramo" data-id="20" data-prerrequisitos="15">Etología y Bienestar Animal</button>
-  <button class="ramo" data-id="21" data-prerrequisitos="15">Histopatología</button>
-  <button class="ramo" data-id="22" data-prerrequisitos="17">Microbiología Veterinaria</button>
-  <button class="ramo" data-id="23" data-prerrequisitos="11">Conservación de Fauna Silvestre</button>
-  <button class="ramo" data-id="24" data-prerrequisitos="18">Métodos de Investigación en Salud</button>
-  <button class="ramo" data-id="25" data-prerrequisitos="">Electivo 3</button>
-</div>
+    <!-- Semestre IV -->
+    <div class="semestre">
+      <h2>Semestre IV</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="20" data-prerq="15">Etología y Bienestar Animal</div>
+        <div class="ramo" data-id="21" data-prerq="15">Histopatología</div>
+        <div class="ramo" data-id="22" data-prerq="17">Microbiología Veterinaria</div>
+        <div class="ramo" data-id="23" data-prerq="11">Conservación de Fauna Silvestre</div>
+        <div class="ramo" data-id="24" data-prerq="18">Métodos de Investigación en Salud</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE V -->
-<div class="semestre">
-  <h2>Semestre V</h2>
-  <button class="ramo" data-id="26" data-prerrequisitos="18">Genética en Ciencias Veterinarias</button>
-  <button class="ramo" data-id="27" data-prerrequisitos="24">Epidemiología Veterinaria</button>
-  <button class="ramo" data-id="28" data-prerrequisitos="13,21">Fisiopatología Veterinaria</button>
-  <button class="ramo" data-id="29" data-prerrequisitos="23">Gestión Ambiental y Desarrollo Sustentable</button>
-  <button class="ramo" data-id="30" data-prerrequisitos="18">Gestión Contable y Financiera</button>
-  <button class="ramo" data-id="31" data-prerrequisitos="">Electivo 4</button>
-</div>
+    <!-- Semestre V -->
+    <div class="semestre">
+      <h2>Semestre V</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="26" data-prerq="18">Genética en Ciencias Veterinarias</div>
+        <div class="ramo" data-id="27" data-prerq="24">Epidemiología Veterinaria</div>
+        <div class="ramo" data-id="28" data-prerq="13,21">Fisiopatología Veterinaria</div>
+        <div class="ramo" data-id="29" data-prerq="23">Gestión Ambiental y Desarrollo Sustentable</div>
+        <div class="ramo" data-id="30" data-prerq="18">Gestión Contable y Financiera</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE VI -->
-<div class="semestre">
-  <h2>Semestre VI</h2>
-  <button class="ramo" data-id="32" data-prerrequisitos="20,28">Semiología Veterinaria</button>
-  <button class="ramo" data-id="33" data-prerrequisitos="28">Reproducción Animal</button>
-  <button class="ramo" data-id="34" data-prerrequisitos="28">Anatomía Patológica</button>
-  <button class="ramo" data-id="35" data-prerrequisitos="22,24">Microbiología de los Alimentos</button>
-  <button class="ramo" data-id="36" data-prerrequisitos="16,20">Práctica Intermedia</button>
-  <button class="ramo" data-id="37" data-prerrequisitos="">Electivo 5</button>
-</div>
+    <!-- Semestre VI -->
+    <div class="semestre">
+      <h2>Semestre VI</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="33" data-prerq="28">Reproducción Animal</div>
+        <div class="ramo" data-id="34" data-prerq="28">Anatomía Patológica</div>
+        <div class="ramo" data-id="35" data-prerq="22,24">Microbiología de los Alimentos</div>
+        <div class="ramo" data-id="36" data-prerq="16">Práctica Intermedia</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE VII -->
-<div class="semestre">
-  <h2>Semestre VII</h2>
-  <button class="ramo" data-id="38" data-prerrequisitos="14,26">Sistemas de Producción Animal</button>
-  <button class="ramo" data-id="39" data-prerrequisitos="28">Farmacología Veterinaria</button>
-  <button class="ramo" data-id="40" data-prerrequisitos="27,35">Enfermedades por Agentes Biológicos I</button>
-  <button class="ramo" data-id="41" data-prerrequisitos="32">Procedimientos Clínicos</button>
-  <button class="ramo" data-id="42" data-prerrequisitos="34">Imagenología</button>
-  <button class="ramo" data-id="43" data-prerrequisitos="18">IA Aplicada a la Salud</button>
-</div>
+    <!-- Semestre VII -->
+    <div class="semestre">
+      <h2>Semestre VII</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="38" data-prerq="14,26">Sistemas de Producción Animal</div>
+        <div class="ramo" data-id="39" data-prerq="28,20">Farmacología Veterinaria</div>
+        <div class="ramo" data-id="32" data-prerq="">Semiología Veterinaria</div>
+        <div class="ramo" data-id="40" data-prerq="27,35">Enfermedades producidas por agentes biológicos I</div>
+        <div class="ramo" data-id="41" data-prerq="32">Procedimientos clínicos</div>
+        <div class="ramo" data-id="42" data-prerq="34">Imagenología</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE VIII -->
-<div class="semestre">
-  <h2>Semestre VIII</h2>
-  <button class="ramo" data-id="44" data-prerrequisitos="34,40">Laboratorio Clínico y Biotecnología</button>
-  <button class="ramo" data-id="45" data-prerrequisitos="24,39">Investigación en Ciencias Veterinarias</button>
-  <button class="ramo" data-id="46" data-prerrequisitos="40">Enfermedades por Agentes Biológicos II</button>
-  <button class="ramo" data-id="47" data-prerrequisitos="39,41">Cirugía y Anestesiología</button>
-  <button class="ramo" data-id="48" data-prerrequisitos="32,42">Medicina Interna</button>
-  <button class="ramo" data-id="49" data-prerrequisitos="">Bioética</button>
-</div>
+    <!-- Semestre VIII -->
+    <div class="semestre">
+      <h2>Semestre VIII</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="45" data-prerq="24,39">Investigación en Ciencias Veterinarias</div>
+        <div class="ramo" data-id="46" data-prerq="40">Enfermedades producidas por agentes biológicos II</div>
+        <div class="ramo" data-id="47" data-prerq="39,41">Principios de cirugía y anestesiología</div>
+        <div class="ramo" data-id="48" data-prerq="32,42">Medicina Interna</div>
+        <div class="ramo" data-id="49" data-prerq="">Bioética</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE IX -->
-<div class="semestre">
-  <h2>Semestre IX</h2>
-  <button class="ramo" data-id="50" data-prerrequisitos="46">Salud Pública Veterinaria</button>
-  <button class="ramo" data-id="51" data-prerrequisitos="45,49">Unidad de Investigación I</button>
-  <button class="ramo" data-id="52" data-prerrequisitos="44,47,48">Internado Pequeños Animales I</button>
-  <button class="ramo" data-id="53" data-prerrequisitos="44,47,48">Internado Animales Mayores I</button>
-  <button class="ramo" data-id="54" data-prerrequisitos="30,38">Formulación y Evaluación de Proyectos</button>
-  <button class="ramo" data-id="55" data-prerrequisitos="30,38">Gestión Veterinaria</button>
-  <button class="ramo" data-id="56" data-prerrequisitos="">Práctica Profesional</button>
-</div>
+    <!-- Semestre IX -->
+    <div class="semestre">
+      <h2>Semestre IX</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="50" data-prerq="46">Salud Pública Veterinaria</div>
+        <div class="ramo" data-id="51" data-prerq="45,49">Unidad de Investigación I</div>
+        <div class="ramo" data-id="52" data-prerq="44,47,48">Internado de Pequeños Animales I</div>
+        <div class="ramo" data-id="53" data-prerq="44,47,48">Internado de Animales Mayores I</div>
+        <div class="ramo" data-id="54" data-prerq="30,38">Formulación y Evaluación de Proyectos Veterinarios</div>
+        <div class="ramo" data-id="55" data-prerq="30,38">Gestión Veterinaria</div>
+      </div>
+    </div>
 
-<!-- SEMESTRE X -->
-<div class="semestre">
-  <h2>Semestre X</h2>
-  <button class="ramo" data-id="57" data-prerrequisitos="50,54">Una Salud</button>
-  <button class="ramo" data-id="58" data-prerrequisitos="51">Unidad de Investigación II</button>
-  <button class="ramo" data-id="59" data-prerrequisitos="">Internado Electivo: Pequeños Animales II</button>
-  <button class="ramo" data-id="60" data-prerrequisitos="">Internado Electivo: Animales Mayores II</button>
-  <button class="ramo" data-id="61" data-prerrequisitos="">Internado Electivo: Conservación y Biodiversidad</button>
-  <button class="ramo" data-id="62" data-prerrequisitos="">Internado Electivo: Producción y Calidad</button>
-  <button class="ramo" data-id="63" data-prerrequisitos="36">Orientación Laboral y Ética Profesional</button>
-</div>
+    <!-- Semestre X -->
+    <div class="semestre">
+      <h2>Semestre X</h2>
+      <div class="ramos">
+        <div class="ramo" data-id="56" data-prerq="36">Práctica Profesional</div>
+        <div class="ramo" data-id="57" data-prerq="">Obtención de Licenciatura</div>
+        <div class="ramo"
